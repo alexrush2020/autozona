@@ -1,0 +1,40 @@
+adobe-letter-spacing(value)
+	letter-spacing (value/1000)em
+
+clearfix()
+	&:before,
+	&:after
+		content " "
+		display table
+	&:after
+		clear both
+		
+no-select()
+	pointer-events none
+	user-select none
+	
+a-reset()
+	text-decoration: none
+	color inherit
+	
+ul-reset()
+	list-style none
+	margin: 0
+	padding: 0
+	
+button-reset()
+	background: none
+	border: 0
+	padding: 0
+	outline none
+	cursor: pointer
+
+spriteIcon($icon, $setCenter = false)
+	$iconName = '$' + $icon[9]
+	retinaSprite(lookup($iconName + '_group'))
+	if $setCenter
+		position absolute
+		left 50%
+		top 50%
+		margin-left 0-(lookup($iconName + '_width') / 2)
+		margin-top 0-(lookup($iconName + '_height') / 2)

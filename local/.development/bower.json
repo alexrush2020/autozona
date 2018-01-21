@@ -1,0 +1,20 @@
+{
+  "name": "ratio",
+  "version": "1.0.0",
+  "authors": [
+    "ratio <client@ratio.bz>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "CanJS": "canjs#~2.3.1",
+    "normalize-css": "^7.0.0"
+  }
+}
