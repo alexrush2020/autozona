@@ -1,0 +1,3 @@
+[submodule "local/php_interface/vendor/QuetzalTools"]
+	path = local/php_interface/vendor/QuetzalTools
+	url = git@github.com:grifon/QuetzalTools.git
