@@ -7,7 +7,8 @@
 		array(
 			// 'key' => 'value',
             'headerBlocksIBlockId' => 1,
-            'weOfferIBlockId' => 2
+            'weOfferIBlockId' => 2,
+            'reviewsIBlockId' => 3,
 		)
 	)
 );
