@@ -45,7 +45,7 @@ $curPage = $APPLICATION->GetCurPage();
     $asset->addCss(sprintf('%s/css/jquery.fancybox-1.3.8.min.css', SITE_TEMPLATE_PATH));
     $asset->addCss(sprintf('%s/css/style.css', SITE_TEMPLATE_PATH));
 
-    $asset->addJs(sprintf('%s/js/jquery.js', SITE_TEMPLATE_PATH));
+    $asset->addJs(sprintf('%s/js/jquery-2.1.4.min.js', SITE_TEMPLATE_PATH));
     $asset->addJs(sprintf('%s/js/bootstrap.min.js', SITE_TEMPLATE_PATH));
     $asset->addJs(sprintf('%s/js/jquery.bxslider.min.js', SITE_TEMPLATE_PATH));
     $asset->addJs(sprintf('%s/js/jquery.easing.min.js', SITE_TEMPLATE_PATH));

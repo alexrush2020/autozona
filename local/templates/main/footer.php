@@ -108,6 +108,11 @@ $curPage = $APPLICATION->GetCurPage();
         </div>
     </div>
 </footer>
+<span id="top-link-block" class="affix">
+    <a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:0},'slow'); return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i>
+    </a>
+</span>
 
 </body>
 </html>
