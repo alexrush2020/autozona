@@ -6,6 +6,8 @@
 	new \Quetzal\Environment\Configuration\CommonConfiguration(
 		array(
 			// 'key' => 'value',
+            'headerBlocksIBlockId' => 1,
+            'weOfferIBlockId' => 2
 		)
 	)
 );
