@@ -117,7 +117,7 @@ $APPLICATION->SetTitle('Autozona - Автозапчасти в Таганрог�
             );?>
         </div>
     </div>
-    <div class="f_about">
+    <div id="company" class="f_about">
         <div class="col-md-7 f_about_bg_left wow bounceInLeft"></div>
         <div class="col-md-9 f_about_bg_right wow bounceInRight"></div>
         <div class="container">
@@ -133,7 +133,7 @@ $APPLICATION->SetTitle('Autozona - Автозапчасти в Таганрог�
         </div>
     </div>
 
-    <div class="f_reviews wow bounceInRight" style="visibility: visible; animation-name: bounceInRight;">
+    <div id="reviews" class="f_reviews wow bounceInRight" style="visibility: visible; animation-name: bounceInRight;">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">

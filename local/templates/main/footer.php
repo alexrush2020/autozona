@@ -7,7 +7,7 @@ $curPage = $APPLICATION->GetCurPage();
 <? if ($curPage != '/'): ?>
     </div>
 <? endif ?>
-<footer class="wow bounceInUp" style="visibility: visible; animation-name: bounceInUp;">
+<footer id="contacts" class="wow bounceInUp" style="visibility: visible; animation-name: bounceInUp;">
     <div class="container">
         <div class="row">
             <div class="footer_position_1 col-md-3">
@@ -109,7 +109,7 @@ $curPage = $APPLICATION->GetCurPage();
     </div>
 </footer>
 <span id="top-link-block" class="affix">
-    <a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:0},'slow'); return false;">
+    <a href="#top" class="well well-sm js-scroll">
         <i class="glyphicon glyphicon-chevron-up"></i>
     </a>
 </span>

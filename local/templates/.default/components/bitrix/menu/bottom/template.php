@@ -11,7 +11,7 @@ foreach ($arResult as $arItem) {
     $customClasses = '';
 
     echo sprintf(
-        '<li class="menu-item menu-item-type-custom menu-item-object-custom %s"><a href="%s">%s</a></li>',
+        '<li class="menu-item menu-item-type-custom menu-item-object-custom %s"><a href="%s" class="js-scroll">%s</a></li>',
         $customClasses,
         $arItem['LINK'],
         $arItem['TEXT']

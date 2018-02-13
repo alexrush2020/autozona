@@ -4,6 +4,7 @@ AutoZona = {
         this.initBackButton();
         this.initHeaderForm();
         this.initDropdownMenu();
+        this.initScroll();
     },
 
     initSlider: function () {
@@ -40,6 +41,23 @@ AutoZona = {
         if (($(window).height() + 100) < $(document).height()) {
             $('#top-link-block').removeClass('hidden').affix({offset: {top: 100}});
         }
+    },
+
+    initScroll: function () {
+        $('.js-scroll').on('click', function (e) {
+            var parts = $(this).attr('href').split('#'),
+                id = parts[1],
+                elem = $('#' + id);
+
+            if (elem.length) {
+                e.preventDefault();
+
+                var offset = $(this).data('offset') ? $(this).data('offset') : 0,
+                    top = elem.offset().top + offset;
+
+                $('html, body').animate({ scrollTop: top }, 800, 'swing');
+            }
+        });
     },
 
     initHeaderForm: function () {

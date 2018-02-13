@@ -23,21 +23,21 @@ $aMenuLinks = array(
     ),
     array(
         'О компании',
-        '/#company',
+        '#company',
         array(),
         array(),
         ''
     ),
     array(
         'Отзывы',
-        '/#reviews',
+        '#reviews',
         array(),
         array(),
         ''
     ),
     array(
         'Контакты',
-        '/#contacts',
+        '#contacts',
         array(),
         array(),
         ''

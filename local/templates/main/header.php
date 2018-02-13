@@ -65,7 +65,7 @@ $curPage = $APPLICATION->GetCurPage();
 </head>
 <body>
 <?$APPLICATION->ShowPanel()?>
-<div class="header_bg <? if ($curPage != '/'): ?>__inner<? endif ?>" style="background-image: url(<?= SITE_TEMPLATE_PATH ?>/images/bg.jpg);">
+<div id="top" class="header_bg <? if ($curPage != '/'): ?>__inner<? endif ?>" style="background-image: url(<?= SITE_TEMPLATE_PATH ?>/images/bg.jpg);">
     <div class="container header wow bounceInDown" style="visibility: visible; animation-name: bounceInDown;">
         <div class="row">
             <div class="header_position_1 col-md-2">
