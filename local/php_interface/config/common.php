@@ -9,6 +9,8 @@
             'headerBlocksIBlockId' => 1,
             'weOfferIBlockId' => 2,
             'reviewsIBlockId' => 3,
+            'ordersIBlockId' => 4,
+            'catalogIBlockId' => 5
 		)
 	)
 );

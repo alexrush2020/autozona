@@ -53,6 +53,8 @@ $curPage = $APPLICATION->GetCurPage();
     $asset->addJs(sprintf('%s/js/jquery.mousewheel.min.js', SITE_TEMPLATE_PATH));
     $asset->addJs(sprintf('%s/js/jquery-migrate.min.js', SITE_TEMPLATE_PATH));
     $asset->addJs(sprintf('%s/js/wow.min.js', SITE_TEMPLATE_PATH));
+    $asset->addJs(sprintf('%s/js/jquery.validate.js', SITE_TEMPLATE_PATH));
+    $asset->addJs(sprintf('%s/js/jquery.maskedinput.js', SITE_TEMPLATE_PATH));
     $asset->addJs(sprintf('%s/js/main.js', SITE_TEMPLATE_PATH));
     ?>
     <?

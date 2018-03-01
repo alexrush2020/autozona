@@ -17,60 +17,59 @@ $curPage = $APPLICATION->GetCurPage();
                 <table>
                     <tbody>
                     <tr>
-                        <td><img class="alignnone size-full wp-image-129" src="<?= SITE_TEMPLATE_PATH ?>/images/telephone.png"
-                                 alt="" width="14" height="19"></td>
+                        <td>
+                            <img class="alignnone size-full wp-image-129" src="<?= SITE_TEMPLATE_PATH ?>/images/telephone.png" alt="" width="14" height="19">
+                        </td>
                         <td><span style="font-size: 18pt;"><strong>+79081993021</strong></span></td>
                     </tr>
                     </tbody>
                 </table>
-                <style>.footer_position_1 table img {
-                        margin-right: 10px;
-                    }</style>
             </div>
             <div class="footer_position_2 col-md-6">
                 <p><strong><span style="font-size: 18pt; color: #57a453;">Обратная связь:</span></strong></p>
-                <div role="form" class="wpcf7" id="wpcf7-f130-o2" lang="ru-RU" dir="ltr">
+                <div role="form">
                     <div class="screen-reader-response"></div>
-                    <form action="http://demo.click5.ru/dogovor/546228-39/index.html#wpcf7-f130-o2" method="post"
-                          class="wpcf7-form" novalidate="novalidate">
-                        <div style="display: none;">
-                            <input type="hidden" name="_wpcf7" value="130">
-                            <input type="hidden" name="_wpcf7_version" value="4.8">
-                            <input type="hidden" name="_wpcf7_locale" value="ru_RU">
-                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f130-o2">
-                            <input type="hidden" name="_wpcf7_container_post" value="0">
-                            <input type="hidden" name="_wpcf7_nonce" value="a3c9c6d1b6">
-                        </div>
+                    <form class="js-footer-form">
                         <table>
                             <tbody>
                             <tr>
-                                <td><span class="wpcf7-form-control-wrap text-1"><input type="text" name="text-1"
-                                                                                        value="" size="40"
-                                                                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                                                        aria-required="true"
-                                                                                        aria-invalid="false"
-                                                                                        placeholder="Ваше имя..."></span>
+                                <td>
+                                    <span class="wpcf7-form-control-wrap text-1">
+                                        <input type="text"
+                                            name="NAME"
+                                            value="" size="40"
+                                            class="wpcf7-form-control wpcf7-text form-control"
+                                            placeholder="Ваше имя..."
+                                            required />
+                                    </span>
                                 </td>
-                                <td rowspan="3"><span class="wpcf7-form-control-wrap textarea-1"><textarea
-                                                name="textarea-1" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea"
-                                                aria-invalid="false" placeholder="Текст сообщения..."></textarea></span></td>
-                            </tr>
-                            <tr>
-                                <td><span class="wpcf7-form-control-wrap text-2"><input type="text" name="text-2"
-                                                                                        value="" size="40"
-                                                                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                                                        aria-required="true"
-                                                                                        aria-invalid="false"
-                                                                                        placeholder="Номер телефона..."></span>
+                                <td rowspan="3">
+                                    <span class="wpcf7-form-control-wrap textarea-1">
+                                        <textarea
+                                                name="COMMENT" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea"
+                                                placeholder="Текст сообщения..."></textarea>
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit"><span
-                                            class="ajax-loader"></span></td>
+                                <td>
+                                    <span class="wpcf7-form-control-wrap text-2">
+                                        <input type="text" name="PHONE"
+                                            value="" size="40"
+                                            class="wpcf7-form-control wpcf7-text js-phone"
+                                            placeholder="Номер телефона..."
+                                            required />
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit">
+                                </td>
                             </tr>
                             </tbody>
                         </table>
-                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                        <div class="wpcf7-response-output wpcf7-display-none js-output"></div>
                     </form>
                 </div>
                 <style>.footer_position_2 table td {

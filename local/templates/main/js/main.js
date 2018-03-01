@@ -3,8 +3,10 @@ AutoZona = {
         this.initSlider();
         this.initBackButton();
         this.initHeaderForm();
+        this.initFooterForm();
         this.initDropdownMenu();
         this.initScroll();
+        this.initPhone();
     },
 
     initSlider: function () {
@@ -61,7 +63,49 @@ AutoZona = {
     },
 
     initHeaderForm: function () {
+        var form = $('.js-header-form');
 
+        form.validate({
+            submitHandler: $.proxy(function() {
+                this.submitHandler(form);
+            }, this)
+        });
+
+        form.submit(function (e) {
+            e.preventDefault();
+        });
+    },
+
+    initFooterForm: function () {
+        var form = $('.js-footer-form');
+
+        form.validate({
+            submitHandler: $.proxy(function() {
+                this.submitHandler(form);
+            }, this)
+        });
+
+        form.submit(function (e) {
+            e.preventDefault();
+        });
+    },
+
+    submitHandler: function (form) {
+        var data = form.serialize();
+
+        $.ajax({
+            url: '/local/ajax/request.php',
+            data: data,
+            type: 'POST',
+            dataType: 'json',
+            success: function (data) {
+                if (data && data.success) {
+                    alert('Заявка успешно отправлена');
+                } else {
+                    alert(data.error);
+                }
+            }
+        });
     },
 
     equalHeight: function(group) {
@@ -73,6 +117,10 @@ AutoZona = {
             }
         });
         group.height(tallest);
+    },
+
+    initPhone: function () {
+        $('.js-phone').mask('+7 (999) 999 9999');
     }
 }
 
