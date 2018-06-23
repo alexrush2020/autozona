@@ -1253,6 +1253,19 @@ label:focus,
     max-width: 960px;
 }
 
+.catalog-page {
+    min-height: 500px;
+    padding: 25px 0;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+@media screen and (max-width: 1280px) {
+    .catalog-page {
+        max-width: 960px;
+    }
+}
+
 .inner-title {
     font-size: 35px;
     color: #383838;
