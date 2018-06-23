@@ -131,6 +131,8 @@ $curPage = $APPLICATION->GetCurPage();
     </div>
 </div>
 <div class="clear"></div>
-<? if ($curPage != '/'): ?>
+<? if (strpos($curPage, '/catalog/') !== false): ?>
+    <div class="catalog-page">
+<? elseif ($curPage != '/'): ?>
     <div class="inner-page">
 <? endif ?>
