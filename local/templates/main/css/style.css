@@ -4,6 +4,16 @@ Theme URI: http://nkrf-job.ru
 Author: NKRF
 */
 
+@font-face {
+    font-family: 'rouble';
+    src: url('../fonts/rouble-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/rouble-webfont.woff2') format('woff2'),
+    url('../fonts/rouble-webfont.woff') format('woff'),
+    url('../fonts/rouble-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font: 12px/18px 'Roboto', Arial, sans-serif;
     width: 100%;
@@ -154,16 +164,16 @@ body {
 
 .navbar .header_nav ul.navbar-nav > li > a {
     text-transform: uppercase;
-    color: #fff;
-    font-weight: 300;
-    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    font-size: 14px;
     padding: 25px 6px;
     position: relative;
 }
 
 .navbar .header_nav ul.navbar-nav > li > a:hover,
 .navbar .header_nav ul.navbar-nav > li.open > a {
-    color: #fff;
+    opacity: 0.8;
 }
 
 .navbar .nav > li > a:focus,
@@ -917,22 +927,56 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 
 footer {
     padding: 30px 0;
-    background: #303030;
-    color: #fff;
+    background: #f8f8f8;
+    border-top: 1px solid #e7e7e7;
+    color: #333;
     line-height: 22px;
 }
 
 footer p {
-    color: #fff;
+    color: #333;
 }
 
 footer .menu.nav.navbar-nav {
 
 }
 
+.footer__phone-block {
+    font-size: 16px;
+}
+
+.footer__phone-icon {
+    margin-right: 5px;
+    position: relative;
+    top: 3px;
+}
+
+.footer__phone {
+    text-decoration: none !important;
+    color: #333;
+}
+
+.footer__phone:hover {
+    color: #333;
+    opacity: 0.8;
+}
+
+.footer__phone-header {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.footer-menu-header {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
 footer .menu.nav.navbar-nav a {
-    font-size: 16px !important;
-    color: #fff !important;
+    font-size: 14px !important;
+    color: #333;
     padding: 5px 0 !important;
 }
 
@@ -959,7 +1003,7 @@ footer input[type="text"] {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     padding: 10px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 footer input[type="text"].wpcf7-not-valid {
@@ -974,7 +1018,7 @@ footer input[type="submit"] {
     width: 200px;
     height: 38px;
     border: 0;
-    background: #0696d6;
+    background: #337ab7;
     color: #fff;
     font-size: 16px;
     font-weight: 900;
@@ -986,7 +1030,7 @@ footer textarea {
     width: 100%;
     padding: 10px;
     height: 136px;
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid #515151;
     background: none;
     -webkit-border-radius: 5px;
@@ -1170,12 +1214,12 @@ label:focus,
     }
 }
 
-.header_bg:after {
+/*.header_bg:after {
     background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.65) 20%, rgba(0,0,0,0.4) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 20%,rgba(0,0,0,0.4) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 20%,rgba(0,0,0,0.4) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#66000000',GradientType=0 );
-}
+}*/
 .header_position_1 p {
     font-size: 14px;
     line-height: 18px;
@@ -1236,14 +1280,25 @@ label:focus,
 .logo {
     display: inline-block;
     position: relative;
-    width: 177px;
-    height: 106px;
-    background-image: url(../images/logo.png);
+    width: 160px;
+    height: 124px;
+    background-size: 160px 124px;
+    background-image: url(../images/logo-big.png);
 }
+
+/*footer .logo {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 155px;
+    background-size: 200px 155px;
+    background-image: url(../images/logo-big.png);
+}*/
 
 .header_bg.__inner {
     height: auto;
-    background-position: top;
+    background: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
 }
 
 .inner-page {
@@ -1300,4 +1355,91 @@ label:focus,
 
 label.error {
     display: none !important;
+}
+
+.catalog-item {
+    margin-bottom: 20px;
+}
+
+
+.catalog-item__block {
+    min-height: 390px;
+    overflow: hidden;
+}
+
+.catalog-item__img, .catalog-item__title, .catalog-item__content {
+    margin-bottom: 10px;
+}
+
+.catalog-item__title {
+    font-size: 14px;
+}
+
+.catalog-item__buy-block {
+    padding-top: 10px;
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    bottom: 0;
+}
+
+.catalog-item__buy-block:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: -10px;
+    opacity: .5;
+    background: #fff;
+    height: 10px;
+}
+
+.catalog-item__price {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.catalog-detail__price {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+    top: 4px;
+}
+
+.catalog-detail__buy-block {
+    margin-bottom: 20px;
+}
+
+.catalog-detail__buy {
+    display: inline-block;
+}
+
+.catalog-detail__title, .catalog-detail__content {
+    margin-bottom: 20px;
+}
+
+.catalog-detail__content {
+    font-size: 14px;
+}
+
+.rub {
+    font-family: 'rouble';
+}
+
+@media (max-width: 767px) {
+    .catalog-item__block {
+        min-height: auto;
+        overflow: visible;
+    }
+
+    .catalog-item__buy-block {
+        position: static;
+    }
+
+    .catalog-item__buy .btn {
+        display: block;
+        width: 100%;
+    }
 }

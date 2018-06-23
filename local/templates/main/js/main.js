@@ -7,6 +7,43 @@ AutoZona = {
         this.initDropdownMenu();
         this.initScroll();
         this.initPhone();
+        this.initFancy();
+        this.initBasket();
+    },
+
+    initBasket: function () {
+        $(document).on('click', '.js-add-to-basket', function (e) {
+            e.preventDefault();
+
+            var $this = $(this),
+                itemId = $this.data('id');
+
+            if (itemId) {
+                $.ajax({
+                    url: '/local/ajax/add-to-basket.php',
+                    data: {id: itemId},
+                    dataType: 'json',
+                    type: 'post',
+                    success: function (data) {
+                        if (data) {
+                            if (data.success) {
+                                AutoZona.updateBasket();
+                            } else {
+                                alert(data.error);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    },
+
+    updateBasket: function () {
+
+    },
+
+    initFancy: function () {
+        $('.js-fancybox').fancybox();
     },
 
     initSlider: function () {
@@ -101,6 +138,7 @@ AutoZona = {
             success: function (data) {
                 if (data && data.success) {
                     alert('Заявка успешно отправлена');
+                    location.reload();
                 } else {
                     alert(data.error);
                 }

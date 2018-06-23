@@ -12,21 +12,14 @@ $curPage = $APPLICATION->GetCurPage();
         <div class="row">
             <div class="footer_position_1 col-md-3">
                 <div class="logo"></div>
-                <p><span style="font-size: 14pt;">Продажа автозапчастей</span></p>
-                <p><span style="font-size: 14pt;">Телефон для заказа:</span></p>
-                <table>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <img class="alignnone size-full wp-image-129" src="<?= SITE_TEMPLATE_PATH ?>/images/telephone.png" alt="" width="14" height="19">
-                        </td>
-                        <td><span style="font-size: 18pt;"><strong>+79081993021</strong></span></td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="footer__phone-header">Телефон для заказа:</div>
+                <div class="footer__phone-block">
+                    <span class="glyphicon glyphicon-earphone footer__phone-icon"></span>
+                    <a class="footer__phone" href="+79081993021">+79081993021</a>
+                </div>
             </div>
             <div class="footer_position_2 col-md-6">
-                <p><strong><span style="font-size: 18pt; color: #57a453;">Обратная связь:</span></strong></p>
+                <div class="footer-menu-header">Обратная связь:</div>
                 <div role="form">
                     <div class="screen-reader-response"></div>
                     <form class="js-footer-form">
@@ -82,7 +75,7 @@ $curPage = $APPLICATION->GetCurPage();
                     }</style>
             </div>
             <div class="footer_position_3 col-md-3">
-                <p><strong><span style="font-size: 18pt; color: #57a453;">Разделы:</span></strong></p>
+                <div class="footer-menu-header" style="margin-bottom: 8px">Карта сайта:</div>
                 <div class="menu-verhnee-menyu-container">
                     <ul id="menu-verhnee-menyu-1" class="menu nav navbar-nav">
                         <?

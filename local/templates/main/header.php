@@ -67,7 +67,7 @@ $curPage = $APPLICATION->GetCurPage();
 </head>
 <body>
 <?$APPLICATION->ShowPanel()?>
-<div id="top" class="header_bg <? if ($curPage != '/'): ?>__inner<? endif ?>" style="background-image: url(<?= SITE_TEMPLATE_PATH ?>/images/bg.jpg);">
+<div id="top" class="header_bg <? if ($curPage != '/'): ?>__inner<? endif ?>">
     <div class="container header wow bounceInDown" style="visibility: visible; animation-name: bounceInDown;">
         <div class="row">
             <div class="header_position_1 col-md-2">
@@ -135,4 +135,20 @@ $curPage = $APPLICATION->GetCurPage();
     <div class="catalog-page">
 <? elseif ($curPage != '/'): ?>
     <div class="inner-page">
+<? endif ?>
+
+<? if ($curPage != '/'): ?>
+    <div class="container">
+        <div class="row">
+            <?$APPLICATION->IncludeComponent(
+                'bitrix:breadcrumb',
+                '',
+                Array(
+                    'START_FROM' => '0',
+                    'PATH' => '',
+                    'SITE_ID' => 's1'
+                )
+            );?>
+        </div>
+    </div>
 <? endif ?>
