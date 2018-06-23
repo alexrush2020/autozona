@@ -1,4 +1,5 @@
 <?php
+require_once 'functions.php';
 require_once 'vendor/QuetzalTools/bootstrap.php';
 require_once 'classes/AutoLoader.php';
 
