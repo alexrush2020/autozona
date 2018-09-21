@@ -83,6 +83,27 @@ $curPage = $APPLICATION->GetCurPage();
                             <? $APPLICATION->IncludeFile('/local/include/main/header_email.php'); ?>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="cart" colspan="2">
+                            <a href="/basket/" class="header-basket">
+                                <table width="100%">
+                                    <tr>
+                                        <td class="header-basket-td">
+                                            <div class="glyphicon glyphicon-shopping-cart header-basket-icon"></div>
+                                        </td>
+                                        <td class="header-basket-td">
+                                            <div>
+                                                В корзине: <span class="header-basket-quantity js-basket-quantity">0</span>
+                                            </div>
+                                            <div>
+                                                Итого: <span class="header-basket-total js-basket-total">0</span> <span class="rub">a</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>

@@ -12,6 +12,8 @@ AutoZona = {
     },
 
     initBasket: function () {
+        this.updateBasket();
+
         $(document).on('click', '.js-add-to-basket', function (e) {
             e.preventDefault();
 
@@ -27,7 +29,10 @@ AutoZona = {
                     success: function (data) {
                         if (data) {
                             if (data.success) {
-                                AutoZona.updateBasket();
+                                $('.js-basket-quantity').text(data.quantity);
+                                $('.js-basket-total').text(data.total_formatted);
+                                $('.js-basket-alert strong').text(data.item.name);
+                                $('.alert').alert();
                             } else {
                                 alert(data.error);
                             }
@@ -39,7 +44,18 @@ AutoZona = {
     },
 
     updateBasket: function () {
-
+        $.ajax({
+            url: '/local/ajax/basket.php',
+            data: {},
+            dataType: 'json',
+            type: 'post',
+            success: function (data) {
+                if (data.quantity) {
+                    $('.js-basket-quantity').text(data.quantity);
+                    $('.js-basket-total').text(data.total_formatted);
+                }
+            }
+        });
     },
 
     initFancy: function () {

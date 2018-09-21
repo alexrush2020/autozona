@@ -20,32 +20,32 @@ $result = array(
 );
 
 $fields = array(
-    'ID' => filter_var($_REQUEST['id'], FILTER_SANITIZE_NUMBER_INT)
+    'NAME' => filter_var($_REQUEST['NAME'], FILTER_SANITIZE_STRING),
+    'PHONE' => filter_var($_REQUEST['PHONE'], FILTER_SANITIZE_STRING),
+    'COMMENT' => filter_var($_REQUEST['COMMENT'], FILTER_SANITIZE_STRING),
 );
 
-if (FormHelper::isRequiredFieldsFilled($fields, array('ID'))) {
-    $rsItem = \CIBlockElement::GetList(
-        array(),
-        array(
-            'IBLOCK_ID' => EnvironmentManager::getInstance()->get('catalogIBlockId'),
-            'ID' => $fields['ID']
+if (FormHelper::isRequiredFieldsFilled($fields, array('NAME', 'PHONE'))) {
+    $el = new CIBlockElement();
+
+    $arFields = array(
+        'DATE_ACTIVE_FROM' => ConvertTimeStamp(false, 'FULL'),
+        'IBLOCK_ID' => $env->get('ordersIBlockId'),
+        'NAME' => $fields['PHONE'],
+        'PROPERTY_VALUES' => array(
+            'NAME' => $fields['NAME'],
+            'PHONE' => $fields['PHONE']
         ),
-        false,
-        false,
-        array('ID', 'NAME', 'PROPERTY_PRICE')
+        'PREVIEW_TEXT' => $fields['COMMENT']
     );
 
-    if ($arItem = $rsItem->GetNext()) {
-        $_SESSION['basket'][] = array(
-            'id' => $arItem['ID'],
-            'name' => $arItem['NAME'],
-            'price' => $arItem['PROPERTY_PRICE_VALUE']
-        );
-
-        $result['success'] = true;
+    if ($id = $el->Add($arFields)) {
+        $result['success'] = 1;
+    } else {
+        $result['error'] = sprintf('Ошибка: %s', $el->LAST_ERROR);
     }
 } else {
-    $result['error'] = 'Не удалось добавить товар в корзину';
+    $result['error'] = 'Не заполнены обязательные поля';
 }
 
 echo json_encode($result);

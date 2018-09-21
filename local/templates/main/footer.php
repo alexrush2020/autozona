@@ -106,5 +106,12 @@ $curPage = $APPLICATION->GetCurPage();
     </a>
 </span>
 
+<div class="alert alert-success basket-alert js-basket-alert alert-dismissible fade" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <strong></strong> добавлен в корзину
+</div>
+
 </body>
 </html>
