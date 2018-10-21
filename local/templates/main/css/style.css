@@ -82,6 +82,12 @@ body {
     margin: 0 8px;
 }
 
+@media screen and (max-width: 480px) {
+    .header_slide_form .input-group {
+        padding-bottom: 15px;
+    }
+}
+
 .header_slide_form input[type="text"] {
     background: transparent;
     border: 1px solid #566065;
@@ -1156,6 +1162,7 @@ label:focus,
         vertical-align: middle;
         width: 100%;
         text-align: center;
+        z-index: 3;
     }
 
     .header > .row > div table {
@@ -1184,7 +1191,6 @@ label:focus,
     .navbar .header_nav ul.navbar-nav, .navbar .header_nav {
         float: left;
         width: 100%;
-        background: rgba(0, 0, 0, 0.8);
     }
 
     .header_bg {
@@ -1305,7 +1311,7 @@ label:focus,
     min-height: 500px;
     padding: 25px 0;
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 1200px;
 }
 
 .catalog-page {
@@ -1317,6 +1323,10 @@ label:focus,
 
 @media screen and (max-width: 1280px) {
     .catalog-page {
+        max-width: 960px;
+    }
+
+    .inner-page {
         max-width: 960px;
     }
 }
@@ -1469,6 +1479,7 @@ label.error {
 }
 
 .basket-alert {
+    display: none;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -1476,6 +1487,85 @@ label.error {
     min-width: 300px;
 }
 
+.basket-alert.in {
+    display: block;
+}
+
 .basket-alert button {
     margin-left: 15px;
+}
+
+.order-td__pic {
+    width: 200px;
+}
+
+.order-td__quantity {
+    min-width: 70px;
+}
+
+.order-td__price, order-td__total {
+    min-width: 100px;
+}
+
+@media (max-width: 1024px) {
+    .order-td__pic {
+        width: 100px;
+    }
+}
+
+.order__remove {
+    cursor: pointer;
+}
+
+.order__quantity {
+    width: 44px;
+}
+
+.order-td__name {
+    width: 620px;
+}
+
+@media (max-width: 768px) {
+    .order-td__name {
+        width: auto;
+    }
+
+    .order-td__remove {
+        width: 80px;
+    }
+}
+
+.basket-mobile {
+    display: none;
+}
+
+.basket-desktop {
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .basket-mobile {
+        display: block;
+    }
+
+    .basket-desktop {
+        display: none;
+    }
+
+    .order__quantity {
+        display: inline-block;
+    }
+
+    .order-td__remove {
+        width: auto;
+    }
+}
+
+.order__prop-block {
+    margin-bottom: 6px;
+}
+
+.bold {
+    font-weight: bold;
 }

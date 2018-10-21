@@ -1,4 +1,6 @@
 AutoZona = {
+    alertTimeout: null,
+
     init: function () {
         this.initSlider();
         this.initBackButton();
@@ -9,6 +11,7 @@ AutoZona = {
         this.initPhone();
         this.initFancy();
         this.initBasket();
+        this.initMask($('.js-basket-container'));
     },
 
     initBasket: function () {
@@ -31,8 +34,79 @@ AutoZona = {
                             if (data.success) {
                                 $('.js-basket-quantity').text(data.quantity);
                                 $('.js-basket-total').text(data.total_formatted);
-                                $('.js-basket-alert strong').text(data.item.name);
-                                $('.alert').alert();
+                                $('.js-basket-alert-success strong').text(data.item.name);
+
+                                clearTimeout(AutoZona.alertTimeout);
+                                $('.alert').removeClass('in');
+                                $('.js-basket-alert-success').addClass('in');
+                                AutoZona.alertTimeout = setTimeout(function () {
+                                    $('.alert').removeClass('in');
+                                }, 5000);
+                            } else {
+                                alert(data.error);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        $(document).on('click', '.js-basket-remove', function (e) {
+            e.preventDefault();
+
+            var $this = $(this),
+                $row = $this.closest('tr'),
+                itemId = $row.data('id');
+
+            if (itemId) {
+                $.ajax({
+                    url: '/local/ajax/remove-basket.php',
+                    data: {id: itemId},
+                    dataType: 'json',
+                    type: 'post',
+                    success: function (data) {
+                        if (data) {
+                            if (data.success) {
+                                $('.js-basket-quantity').text(data.quantity);
+                                $('.js-basket-total').text(data.total_formatted);
+                                $('.js-basket-alert-warning strong').text(data.item.name);
+
+                                clearTimeout(AutoZona.alertTimeout);
+                                $('.alert').removeClass('in');
+                                $('.js-basket-alert-warning').addClass('in');
+                                AutoZona.alertTimeout = setTimeout(function () {
+                                    $('.alert').removeClass('in');
+                                }, 5000);
+
+                                AutoZona.updateMainBasket();
+                            } else {
+                                alert(data.error);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        $(document).on('change', '.js-basket-quantity', function () {
+            var $this = $(this),
+                $row = $this.closest('tr'),
+                itemId = $row.data('id'),
+                quantity = $this.val();
+
+            if (itemId) {
+                $.ajax({
+                    url: '/local/ajax/update-basket.php',
+                    data: {id: itemId, quantity: quantity},
+                    dataType: 'json',
+                    type: 'post',
+                    success: function (data) {
+                        if (data) {
+                            if (data.success) {
+                                $('.js-basket-quantity').text(data.quantity);
+                                $('.js-basket-total').text(data.total_formatted);
+
+                                AutoZona.updateMainBasket();
                             } else {
                                 alert(data.error);
                             }
@@ -53,6 +127,24 @@ AutoZona = {
                 if (data.quantity) {
                     $('.js-basket-quantity').text(data.quantity);
                     $('.js-basket-total').text(data.total_formatted);
+                }
+            }
+        });
+    },
+
+    updateMainBasket: function () {
+        var $basketContainer = $('.js-basket-container');
+
+        $.ajax({
+            url: '/local/ajax/main-basket.php',
+            data: {},
+            type: 'post',
+            success: function (data) {
+                if (data) {
+                    $basketContainer.html(data);
+                    AutoZona.initMask($basketContainer);
+                } else {
+                    location.reload();
                 }
             }
         });
@@ -175,8 +267,13 @@ AutoZona = {
 
     initPhone: function () {
         $('.js-phone').mask('+7 (999) 999 9999');
+    },
+
+    initMask: function ($selector) {
+        $selector.find('[data-inputmask]').inputmask();
+        $selector.find('[data-inputmask-regex]').inputmask();
     }
-}
+};
 
 $(document).ready(function () {
     AutoZona.init();
