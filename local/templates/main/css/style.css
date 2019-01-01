@@ -1339,6 +1339,14 @@ label:focus,
     margin-bottom: 30px;
 }
 
+.inner-title-2 {
+    font-size: 22px;
+    color: #383838;
+    font-weight: 900;
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
 .inner-text {
     font-size: 14px;
 }
@@ -1568,4 +1576,11 @@ label.error {
 
 .bold {
     font-weight: bold;
+}
+.order-resize {
+    resize: none;
+}
+
+.order-error {
+    color: #e21e00;
 }

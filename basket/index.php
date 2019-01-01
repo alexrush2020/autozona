@@ -13,6 +13,13 @@ $APPLICATION->SetTitle('Оформление заказа');
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="js-order-container">
+                    <? $APPLICATION->IncludeComponent('vag:vag.order', ''); ?>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

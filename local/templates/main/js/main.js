@@ -12,6 +12,7 @@ AutoZona = {
         this.initFancy();
         this.initBasket();
         this.initMask($('.js-basket-container'));
+        this.initOrderForm();
     },
 
     initBasket: function () {
@@ -233,6 +234,18 @@ AutoZona = {
         form.submit(function (e) {
             e.preventDefault();
         });
+    },
+
+    initOrderForm: function () {
+        var form = $('.js-order-form');
+
+        if (form.length) {
+            form.validate({
+                submitHandler: $.proxy(function() {
+                    form[0].submit();
+                }, this)
+            });
+        }
     },
 
     submitHandler: function (form) {

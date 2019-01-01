@@ -30,7 +30,7 @@ if (FormHelper::isRequiredFieldsFilled($fields, array('NAME', 'PHONE'))) {
 
     $arFields = array(
         'DATE_ACTIVE_FROM' => ConvertTimeStamp(false, 'FULL'),
-        'IBLOCK_ID' => $env->get('ordersIBlockId'),
+        'IBLOCK_ID' => $env->get('requestsIBlockId'),
         'NAME' => $fields['PHONE'],
         'PROPERTY_VALUES' => array(
             'NAME' => $fields['NAME'],
@@ -40,6 +40,7 @@ if (FormHelper::isRequiredFieldsFilled($fields, array('NAME', 'PHONE'))) {
     );
 
     if ($id = $el->Add($arFields)) {
+        \CEvent::Send('VAG_NEW_REQUEST', 's1', $fields);
         $result['success'] = 1;
     } else {
         $result['error'] = sprintf('Ошибка: %s', $el->LAST_ERROR);

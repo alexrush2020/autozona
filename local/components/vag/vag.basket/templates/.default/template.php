@@ -41,11 +41,11 @@
     <? endforeach ?>
     <tfoot>
         <tr>
-            <td colspan="4"></td>
+            <td colspan="3"></td>
             <td>
                 <strong>Итого:</strong>
             </td>
-            <td>
+            <td colspan="2" style="text-align: right;">
                 <strong><?= number_format($arResult['TOTAL'], 0, '.', ' ') ?> <span class="rub">a</span></strong>
             </td>
         </tr>
